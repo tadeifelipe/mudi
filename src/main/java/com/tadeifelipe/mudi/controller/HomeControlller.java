@@ -24,7 +24,6 @@ public class HomeControlller {
 		List<Pedido> pedidos = Arrays.asList(pedido,pedido,pedido);
 		model.addAttribute("pedidos",pedidos);
 		
-		
 		return "home";
 	}
 }
