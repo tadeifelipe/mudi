@@ -1,15 +1,23 @@
 package com.tadeifelipe.mudi.dto;
 
+
+import javax.validation.constraints.NotBlank;
+
 import com.tadeifelipe.mudi.model.Pedido;
+import com.tadeifelipe.mudi.model.StatusPedido;
 
 public class RequisicaoNovoPedido {
+	
+	@NotBlank(message = "Por favor, preencha o nome.")
 	private String nomeProduto;
+	
+	@NotBlank(message = "Por favor, preencha a url.")
 	private String urlProduto;
+	
+	@NotBlank(message = "Por favor, preencha a url da imagem.")
 	private String urlImagem;
+	
 	private String descricao;
-	
-	
-	
 	
 	public String getNomeProduto() {
 		return nomeProduto;
@@ -41,6 +49,7 @@ public class RequisicaoNovoPedido {
 		pedido.setDescricao(descricao);
 		pedido.setUrlProduto(urlProduto);
 		pedido.setUrlImagem(urlImagem);	
+		pedido.setStatus(StatusPedido.AGUARDANDO);
 		return pedido;
 	}
 }
